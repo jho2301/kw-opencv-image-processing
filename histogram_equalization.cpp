@@ -7,18 +7,11 @@ using namespace std;
 
 void main()
 {
-	int size;
-	cin >> size;
-
-
-	Mat img_out(Size(size, size), 0);
-
+	Mat img_out;
 	Mat img_in = imread("C:\\Users\\wjsgh\\Desktop\\Cat03.jpg", IMREAD_COLOR);
-
-
+	
 	cvtColor(img_in, img_in, COLOR_RGB2GRAY);
 	imshow("img_in", img_in);
-	
 
 	int* Hist = new int[256];
 	memset(Hist, 0, sizeof(int) * 256);
